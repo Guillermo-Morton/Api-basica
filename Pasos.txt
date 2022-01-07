@@ -1,0 +1,27 @@
+[] = carpeta
+{} = archivo
+
+1- Hacemos npm init, instalamos las dependencias y creamos la estructura del proyecto:
+
+[]src = {
+	[]controllers
+	[]models
+	[]routes
+	{}database.js
+	{}index.js
+}
+
+
+[]public = {
+	{}index.html
+}
+
+{}.babelrc
+
+{}.env
+
+2- En index.js iniciamos nuestro servidor express. Importamos los middelwares que vamos a utilizar, y configuramos de forma basica nuestra api (Elejimos la ruta, ponemos la carpeta public como estatica, utilizamos morgan para ver las peticiones en tiempo real, cors para evitar restricciones cuando hagamos peticiones desde el navegador entre otras cosas).
+3- Crearemos los modelos para nuestra base de datos:
+Modelo de usuarios, modelo de fotos, modelo de eventos.
+4- Crearemos los controladores para cada uno de nuestros modelos (las peticiones get, post, put y delete). Podemos crear helpers que nos ayuden a optimizar el codigo escrito, validar los campos y tener un formato de respuesta para que sean consistentes.
+5- Crearemos las rutas para nuestros controladores (Este paso se puede hacer en conjunto con el anterior), de manera que tengamos forma de llamar a las funciones controladores mediante peticiones http.

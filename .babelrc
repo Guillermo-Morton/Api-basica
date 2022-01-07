@@ -1,0 +1,4 @@
+{
+    // herramienta para entender el codigo
+    "presets": ["env"]
+}
