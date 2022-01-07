@@ -19,6 +19,14 @@ const UserSchema = new Schema({
         default: 'USER_ROLE',
         enum: ['USER_ROLE', 'ADMIN_ROLE']
     },
+    photos:{
+        type: Array,
+        default: []
+    },
+    balance:{
+        type:Number,
+        default: 10000
+    },
     status: {
         type: Boolean,
         default: true,
@@ -28,8 +36,8 @@ const UserSchema = new Schema({
 //Para no mostrar password ni __v
 UserSchema.methods.toJSON = function () {
     console.log(this.toObject())
-    const { name, email, role, _id} = this.toObject();
-    const user  = {name, email, role, uid : _id};
+    const { name, email, role, _id, status, photos, balance} = this.toObject();
+    const user  = { uid : _id, name, email, role, balance, status, photos };
     return user;
   };
 

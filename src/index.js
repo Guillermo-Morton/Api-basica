@@ -6,6 +6,8 @@ const cors = require("cors")
 const dbConnect = require('./database')
 
 const userRoutes = require('./routes/user.routes')
+const photoRoutes = require('./routes/photo.routes')
+const eventRoutes = require('./routes/event.routes')
 
 // ** Esta linea de codigo nos permite utilizar variables de entorno
 require("dotenv").config();
@@ -42,3 +44,5 @@ app.use(defaultRoute+'/saludo', (req, res) => {
     res.send('Hola desde el servidor!')
 }) 
 app.use(defaultRoute, userRoutes)
+app.use(defaultRoute, photoRoutes)
+app.use(defaultRoute, eventRoutes)
